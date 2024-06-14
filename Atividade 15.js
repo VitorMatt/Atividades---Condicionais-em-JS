@@ -15,6 +15,8 @@ const percursoTrechoUm = 30
 const percursoTrechoDois = 45
 const percursoTrechoTres = 30
 const percursoTrechoQuatro = 35
+const limiteMediaBaixa = 15
+const limiteMediaAlta = 18
 let nomeEquipe
 let nomeIntegranteUm
 let nomeIntegranteDois
@@ -61,10 +63,10 @@ velocidadeMediaTrechoQuatro = percursoTrechoQuatro / tempoGastoTrechoQuatro
 
 velocidadeMediaGeral = percursoTotal / tempoTotalGasto
 
-if (velocidadeMediaGeral<15){
+if (velocidadeMediaGeral<limiteMediaBaixa){
 
     alert(`Desempenho equipe ${nomeEquipe}\nVelocidade média no trecho 1: ${velocidadeMediaTrechoUm}km/h\nVelocidade média no trecho 2: ${velocidadeMediaTrechoDois}km/h\nVelocidade média no trecho 3: ${velocidadeMediaTrechoTres}km/h\nVelocidade média no trecho quatro: ${velocidadeMediaTrechoQuatro}km/h\nVelocidade média geral: ${velocidadeMediaGeral}km/h\nDesempenho pode melhorar bastante!`)
-} else if (velocidadeMediaGeral>=15 && velocidadeMediaGeral<=18){
+} else if (velocidadeMediaGeral>=limiteMediaBaixa && velocidadeMediaGeral<=limiteMediaAlta){
 
     alert(`Desempenho equipe ${nomeEquipe}\nVelocidade média no trecho 1: ${velocidadeMediaTrechoUm}km/h\nVelocidade média no trecho 2: ${velocidadeMediaTrechoDois}km/h\nVelocidade média no trecho 3: ${velocidadeMediaTrechoTres}km/h\nVelocidade média no trecho quatro: ${velocidadeMediaTrechoQuatro}km/h\nVelocidade média geral: ${velocidadeMediaGeral}km/h\nDesempenho bom, mas ainda pode melhorar!`)
 } else {
