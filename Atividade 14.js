@@ -5,12 +5,8 @@ Em seguida coletar os dados de 3 alimentos, sendo digitado o nome do alimento, s
 Ao final, informar se o paciente pode comer os 3 alimentos digitados "Dieta adequada!" ou não pode "Dieta inadequada, 
 contém alimentos aos quais o paciente é intolerante!".*/
 
-
 let nomeUsuario
 let respostaUsuario
-let alimentoUm
-let alimentoDois
-let alimentoTres
 let eCeliaco = false
 let eIntolerante = false
 let alimentoUmTemLactose = false
@@ -22,111 +18,92 @@ let alimentoTresTemGluten = false
 
 nomeUsuario = prompt('Digite seu nome.')
 
-respostaUsuario= prompt('Você é celíaco?')
+respostaUsuario = prompt('Você é celíaco?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     eCeliaco = true
 }
 
-respostaUsuario = prompt('Você é intolerante a lactose?')
+respostaUsuario = prompt('Você é intolerante a lactose?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     eIntolerante = true
 }
 
-alimentoUm = prompt('Digite o primeiro alimento.')
+prompt('Digite o primeiro alimento.')
 
-respostaUsuario = prompt('O alimento contém glúten?')
+respostaUsuario = prompt('O alimento contém glúten?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoUmTemGluten = true
 }
 
-respostaUsuario = prompt('O alimento contém lactose?')
+respostaUsuario = prompt('O alimento contém lactose?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoUmTemLactose = true
 }
 
-alimentoDois = prompt('Digite o segundo alimento.')
+prompt('Digite o segundo alimento.')
 
-respostaUsuario = prompt('O alimento contém glúten?')
+respostaUsuario = prompt('O alimento contém glúten?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoDoisTemGluten = true
 }
 
-respostaUsuario = prompt('O alimento contém lactose?')
+respostaUsuario = prompt('O alimento contém lactose?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoDoisTemLactose = true
 }
 
-alimentoTres = prompt('Digite o terceiro alimento.')
+prompt('Digite o terceiro alimento.')
 
-respostaUsuario = prompt('O alimento contém glúten?')
+respostaUsuario = prompt('O alimento contém glúten?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoTresTemGluten = true
 }
 
-respostaUsuario = prompt('O alimento contém lactose?')
+respostaUsuario = prompt('O alimento contém lactose?').toUpperCase()
 
-if (respostaUsuario=='SIM' || respostaUsuario=='sim'){
+if (respostaUsuario=='SIM'){
 
     alimentoTresTemLactose = true
 }
 
-if (eCeliaco==true && eIntolerante==true){
-    
-    if (alimentoUmTemGluten==true || alimentoUmTemLactose==true){
+if (eCeliaco==false && eIntolerante==false){
 
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoDoisTemGluten==true || alimentoDoisTemLactose==true){
+    alert(nomeUsuario + ', a sua dieta está adequada!')
 
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoTresTemGluten==true || alimentoTresTemLactose==true){
+} else if (eCeliaco==true && eIntolerante==false){
+
+    if (alimentoUmTemGluten==true || alimentoDoisTemGluten==true || alimentoTresTemGluten==true){
 
     alert(nomeUsuario + ', a sua dieta não está adequada!')
 } else {
-
     alert(nomeUsuario + ', a sua dieta está adequada!')
 }
-} else if (eCeliaco==true && eIntolerante==false){
 
-    if (alimentoUmTemGluten==true){
-
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoDoisTemGluten==true){
-
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoTresTemGluten==true){
-
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else{
-
-    alert(nomeUsuario + ', a sua dieta está adequada!')
-}
 } else if (eCeliaco==false && eIntolerante==true){
 
-    if (alimentoUmTemLactose==true){
+    if (alimentoUmTemLactose==true || alimentoDoisTemLactose==true || alimentoTresTemLactose==true){
 
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoDoisTemLactose==true){
-    
-    alert(nomeUsuario + ', a sua dieta não está adequada!')
-} else if (alimentoTresTemLactose==true){
-    
     alert(nomeUsuario + ', a sua dieta não está adequada!')
 } else{
 
     alert(nomeUsuario + ', a sua dieta está adequada!')
-}
+} 
+
+} else {
+
+    alert ('A sua dieta está adequada!')
 }
