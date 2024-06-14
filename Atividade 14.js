@@ -105,5 +105,5 @@ if (eCeliaco==false && eIntolerante==false){
 
 } else {
 
-    alert ('A sua dieta está adequada!')
+    alert (nomeUsuario + ', a sua dieta não está adequada!')
 }
